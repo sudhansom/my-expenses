@@ -1,7 +1,35 @@
-import './App.css';
+import ExpenseItem from "./components/ExpenseItem";
+import "./App.css";
 
-function App(){
-    return (<div>Form app...</div>)
+function App() {
+  const expenses = [
+    {
+      id: "e1",
+      title: "Toilet Paper",
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: "e3",
+      title: "Car Insurance",
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: "e4",
+      title: "New Desk (Wooden)",
+      amount: 450,
+      date: new Date(2021, 5, 12),
+    },
+  ];
+  return (
+    <div>
+      <h2>Lest's get started.</h2>
+      {expenses.length &&
+        expenses.map((item) => <ExpenseItem id={item.id} item={item} />)}
+    </div>
+  );
 }
 
 export default App;
