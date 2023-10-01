@@ -1,5 +1,7 @@
 import ExpenseItem from "./components/ExpenseItem";
+
 import "./App.css";
+import Card from "./components/Card";
 
 function App() {
   const expenses = [
@@ -24,11 +26,11 @@ function App() {
     },
   ];
   return (
-    <div>
+    <Card className="expenses">
       <h2>Lest's get started.</h2>
       {expenses.length &&
         expenses.map((item) => <ExpenseItem id={item.id} item={item} />)}
-    </div>
+    </Card>
   );
 }
 
