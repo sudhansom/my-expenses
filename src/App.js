@@ -3,6 +3,7 @@ import ExpenseItem from "./components/Expenses/ExpenseItem";
 import "./App.css";
 import Card from "./components/UI/Card";
 import NewExpense from "./components/NewExpense/NewExpense";
+import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 
 const App = () => {
   const expenses = [
@@ -26,9 +27,13 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+  const getData = (expense) => {
+    console.log("My app: ", expense);
+  };
   return (
     <Card className="expenses">
-      <NewExpense />
+      <NewExpense onGetData={getData} />
+      <ExpenseFilter />
       {expenses.length &&
         expenses.map((item) => <ExpenseItem id={item.id} item={item} />)}
     </Card>
