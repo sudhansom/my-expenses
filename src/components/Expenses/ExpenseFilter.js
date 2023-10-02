@@ -30,7 +30,6 @@ const ExpenseFilter = (props) => {
           <option value="2024">2024</option>
         </select>
       </div>
-      <p>Years to be hidden: {hidenYears}</p>
     </Card>
   );
 };
