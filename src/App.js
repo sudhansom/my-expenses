@@ -6,6 +6,7 @@ import "./App.css";
 import Card from "./components/UI/Card";
 import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseFilter from "./components/Expenses/ExpenseFilter";
+import ExpenseChart from "./components/Chart/ExpenseChart";
 
 const DUMMY_EXPENSES = [
   {
@@ -50,7 +51,8 @@ const App = () => {
     <>
       <NewExpense onGetData={getData} />
       <Card id="card1" className="expenses">
-        <ExpenseFilter id="exp-1" onSelectedYear={getSelectedYear} />
+        <ExpenseFilter onSelectedYear={getSelectedYear} />
+        {expenses.length && <ExpenseChart expenses={expenses} />}
         {expenses.length ? (
           expenses.map((item) => <ExpenseItem key={item.id} item={item} />)
         ) : (
