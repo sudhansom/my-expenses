@@ -15,11 +15,15 @@ const ExpenseForm = (props) => {
   };
 
   const submitHandler = (event) => {
-    event.preventDefault();
-    expense.date = new Date(expense.date);
-    props.onSaveExpenseData(expense);
-    console.log(props);
-    setExpense({ title: "", amount: "", date: "" });
+    if (expense.title !== "" && expense.amount !== "" && expense.date !== "") {
+      console.log(expense);
+      event.preventDefault();
+      expense.date = new Date(expense.date);
+      props.onSaveExpenseData(expense);
+      console.log(props);
+      props.toogleAddBtn();
+      setExpense({ title: "", amount: "", date: "" });
+    }
   };
 
   return (
