@@ -1,0 +1,22 @@
+.expenses-filter {
+  padding: 24px;
+}
+
+.expenses-filter__control {
+  display: flex;
+  justify-content: space-between;
+}
+label {
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+}
+p {
+  color: #fff;
+}
+select {
+  width: 100px;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
