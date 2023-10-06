@@ -5,6 +5,8 @@
   border-radius: 12px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
 .each-chart-bar {
   width: 12px;
